@@ -71,7 +71,7 @@ This README provides instructions for setting up PostgreSQL, pgAdmin 4, and rest
 
 # SQL Cheatsheet
 
-## SQL SELECT STATEMENTS 
+## 1. SQL SELECT STATEMENTS 
 
 1. `SELECT * FROM tbl`  
 - Select all rows and columns from table tbl 
@@ -93,7 +93,7 @@ GROUP BY c1 HAVING c2 > v `
 - Select column c1 and c2 as column alias of the result of aggregate function on expr. Filter group of records with c2 greater than value v 
 
 
-## SQL UPDATE TABLE 
+## 2. SQL UPDATE TABLE 
 
 1. `INSERT INTO tbl(c1,c2,...) 
 VALUES(v1,v2...)`
@@ -131,7 +131,7 @@ DROP COLUMN c1`
 - Drop column c1 from table tbl 
 
 
-## SQL JOIN STATEMENTS 
+## 3. SQL JOIN STATEMENTS 
 1. `SELECT * FROM tbl1 
 INNER JOIN tbl2 ON join-conditions`
 - Inner join table tbl1 with tbl2 based on join-conditions. 
