@@ -112,7 +112,7 @@ WHERE conditions `
 - Drop table tbl and re-create it, all data is lost
 
 
-## SQL TABLE STATEMENTS 
+## 3. SQL TABLE STATEMENTS 
 
 1. `CREATE TABLE tbl
 ( c1 datatype(length) 
@@ -131,7 +131,7 @@ DROP COLUMN c1`
 - Drop column c1 from table tbl 
 
 
-## 3. SQL JOIN STATEMENTS 
+## 4. SQL JOIN STATEMENTS 
 1. `SELECT * FROM tbl1 
 INNER JOIN tbl2 ON join-conditions`
 - Inner join table tbl1 with tbl2 based on join-conditions. 
