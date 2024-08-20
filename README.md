@@ -384,6 +384,10 @@ Specifies how to handle values only present in one of the tables being joined.
 
 Combines the result-set of two or more `SELECT` statements, concatenating results.
 
+# SQL Concepts and Exercises
+
+This README provides information on Timestamps, Extract, SQL subqueries, self joins, data types, primary and foreign keys, and constraints. It also includes practice instructions for the database assessment.
+
 ## Timestamps 
 
 1. `SHOW TIMEZONE()` - Shows the current time zone.
@@ -402,9 +406,6 @@ Extracts components from a date or timestamp:
 - `TO_CHAR()` - Converts data types to text, useful for formatting timestamps.
   - Usage: `TO_CHAR(date_col, 'mm-dd-yyyy')`
 
-# SQL Concepts and Exercises
-
-This README provides information on SQL subqueries, self joins, data types, primary and foreign keys, and constraints. It also includes practice instructions for the database assessment.
 
 ## SUB QUERY
 
