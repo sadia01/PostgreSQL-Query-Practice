@@ -146,7 +146,7 @@ RIGHT JOIN tbl2 ON join-conditions`
 - Full outer join table tbl1 with tbl2 based on join-conditions.
 
 
-# SQL Query Examples and Challenges
+# 1. SQL Statement Fundamentals
 
 This README provides examples and challenges for various SQL operations and concepts, including `SELECT`, `JOIN`, `WHERE`, `ORDER BY`, `LIMIT`, and more. 
 
@@ -308,6 +308,8 @@ WHERE first_name IN ('John', 'Jake', 'Julie');
 
 `LIKE` is case-sensitive. Use `ILIKE` for case-insensitive matching.
 
+# 2. GROUP BY Statement
+
 ## Aggregate Function
 
 Aggregate functions are used in `SELECT` or `HAVING` clauses:
@@ -362,7 +364,8 @@ HAVING SUM(amount) > 100
 LIMIT 5;
 ```
 
-## JOINS
+
+# 3. JOINS
 
 ### AS Statement
 
@@ -384,7 +387,7 @@ Specifies how to handle values only present in one of the tables being joined.
 
 Combines the result-set of two or more `SELECT` statements, concatenating results.
 
-# SQL Concepts and Exercises
+# 4. Advanced SQL Commands
 
 This README provides information on Timestamps, Extract, SQL subqueries, self joins, data types, primary and foreign keys, and constraints. It also includes practice instructions for the database assessment.
 
@@ -425,9 +428,11 @@ It is a query in which a table is joined to itself. `SELF JOIN` is useful for co
 - There is no special keyword for a self join, it's simply standard `JOIN` syntax with the same table in both parts.
 - When using a self join it is necessary to use an alias for the table. otherwise the table names would be ambiguous.
 
-## Practice on `exercises.tar` Database for Assessment 2 Task
+## Assessment 2:  Practice on `exercises.tar` Database for Assessment 2 Task
 
 Restore the database and use `cd schema`.
+
+# 5. Creating Databases & Tables
 
 ## DATA TYPES
 
@@ -686,4 +691,100 @@ CREATE TABLE example(
     age SMALLINT CHECK (age > 21),
     parent_age SMALLINT CHECK (parent_age > age)
 );
+```
+
+## Assessment 3:  Practice Task Assessment 3
+
+
+# 6. Conditional Expressions & Procedures
+
+## CASE Statement
+
+The `CASE` statement is used to execute SQL code conditionally, similar to `IF/ELSE` statements in other programming languages. There are two main ways to use a `CASE` statement:
+
+1. **General CASE**: A simple case where you define conditions and their corresponding results.
+2. **CASE Expression**: Evaluates an expression and compares the result with each value in the `WHEN` clauses sequentially.
+
+### General CASE Syntax
+
+```sql
+CASE 
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ELSE some_other_result
+END
+```
+
+### CASE Expression Syntax
+
+```sql
+CASE expression
+    WHEN value1 THEN result1  
+    WHEN value2 THEN result2
+    ELSE some_other_result
+END
+```
+
+## COALESCE Function
+
+The `COALESCE` function returns the first argument that is not `NULL`. If all arguments are `NULL`, it returns `NULL`. This function is useful when querying a table with `NULL` values and substituting them with another value.
+
+### COALESCE Syntax
+
+```sql
+COALESCE (arg_1, arg_2, ..., arg_n)
+```
+
+**Examples:**
+- `SELECT COALESCE(1, 2)` -> `1`
+- `SELECT COALESCE(NULL, 2, 3)` -> `2`
+- `SELECT item, (price - COALESCE(discount, 0)) AS final FROM table;`
+
+## CAST Function & CAST Operator
+
+The `CAST` function and `CAST` operator allow you to convert from one data type to another. Not all data types can be converted to each other; the conversion must be reasonable.
+
+### CAST Function Syntax
+
+```sql
+SELECT CAST('5' AS INTEGER);
+```
+
+### PostgreSQL CAST Operator Syntax
+
+```sql
+SELECT '5'::INTEGER;
+```
+
+You can also use this in a `SELECT` query with a column name:
+
+```sql
+SELECT CAST(date AS TIMESTAMP)
+FROM table;
+```
+
+## NULLIF Function
+
+The `NULLIF` function takes two inputs and returns `NULL` if both inputs are equal. Otherwise, it returns the first argument.
+
+### NULLIF Syntax
+
+```sql
+NULLIF(arg1, arg2)
+```
+
+**Example:**
+- `NULLIF(10, 10)` -> Returns `NULL`
+
+## VIEWS
+
+Views are useful for frequently used combinations of tables and conditions. Instead of repeating the same query, you can create a view to simplify access to this query.
+
+- A view is a database object that stores a query.
+- In PostgreSQL, a view is accessed as a virtual table.
+- A view does not store data physically but stores the query.
+- Existing views can be altered or updated.
+
+**Example:**
+- `NULLIF(10, 12)` -> Returns `10`
 ```
