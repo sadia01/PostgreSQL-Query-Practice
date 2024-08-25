@@ -786,5 +786,6 @@ Views are useful for frequently used combinations of tables and conditions. Inst
 - Existing views can be altered or updated.
 
 **Example:**
+```
 - `NULLIF(10, 12)` -> Returns `10`
 ```
